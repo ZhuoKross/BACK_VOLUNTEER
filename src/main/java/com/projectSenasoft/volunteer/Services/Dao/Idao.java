@@ -1,5 +1,7 @@
 package com.projectSenasoft.volunteer.Services.Dao;
 
+import com.projectSenasoft.volunteer.Entity.UsuarioEntity;
+
 import java.util.List;
 
 public interface Idao <T, ID>{

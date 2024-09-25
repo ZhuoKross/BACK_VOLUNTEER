@@ -20,6 +20,12 @@ public class PaisController {
         return paisBusiness.findAll();
     }
 
+    @GetMapping("/all/{id}")
+    public PaisDTO finOne(@PathVariable("id") String idPais){
+        PaisDTO paisDTO = paisBusiness.findOne(idPais);
+        return paisDTO;
+    }
+
     @PostMapping("/create")
     public void create (@RequestBody PaisDTO paisDTO){
         System.out.println("Controller: " + paisDTO);

@@ -1,5 +1,6 @@
 package com.projectSenasoft.volunteer.DTO;
 
+import com.projectSenasoft.volunteer.Entity.CategoriaEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,4 +17,5 @@ public class ConvocatoriaDTO {
     private LocalDate fechaInicio;
     private LocalDate fechaFinal;
     private String requisitos;
+    private String idCategoria;
 }

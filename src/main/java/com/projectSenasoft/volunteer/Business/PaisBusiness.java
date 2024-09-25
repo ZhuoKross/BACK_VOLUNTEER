@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 @Component
 public class PaisBusiness {
@@ -32,6 +33,21 @@ public class PaisBusiness {
 
         }catch (Exception e){
             throw new Error("Error al listar paises");
+        }
+    }
+
+
+    public PaisDTO findOne(String idPais){
+        try{
+
+            PaisEntity pais = paisService.getById(idPais);
+
+            PaisDTO newPais = modelMapper.map(pais, PaisDTO.class);
+
+            return newPais;
+
+        }catch (Exception e){
+            throw new Error("Error al seleccionar uno: " , e);
         }
     }
 

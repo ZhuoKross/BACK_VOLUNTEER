@@ -2,10 +2,12 @@ package com.projectSenasoft.volunteer.Services;
 
 
 import com.projectSenasoft.volunteer.Entity.UsuarioEntity;
+import com.projectSenasoft.volunteer.Repository.ConvocatoriaRepository;
 import com.projectSenasoft.volunteer.Repository.UsuarioRepository;
 import com.projectSenasoft.volunteer.Services.Dao.Idao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.projectSenasoft.volunteer.Entity.convocatoriaEntity;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,6 +16,11 @@ import java.util.Optional;
 public class UsuarioService implements Idao <UsuarioEntity, String> {
     @Autowired
     UsuarioRepository usuarioRepository;
+
+    @Autowired
+    ConvocatoriaRepository convocatoriaRepository;
+
+
 
     @Override
     public List<UsuarioEntity> findAll(){
@@ -37,6 +44,16 @@ public class UsuarioService implements Idao <UsuarioEntity, String> {
         usuarioRepository.save(entity);
     }
 
+    public void registerUserwithConvocatoria(String idUsuario, String idConvocatoria){
+
+        Optional<UsuarioEntity> usuario = usuarioRepository.findById(idUsuario);
+        Optional<convocatoriaEntity> convocatoria = convocatoriaRepository.findById(idConvocatoria);
+
+        
+
+
+    }
+
 
     public void delete(String idUsuario) {
         usuarioRepository.deleteById(idUsuario);
@@ -49,6 +66,6 @@ public class UsuarioService implements Idao <UsuarioEntity, String> {
 
     @Override
     public void create(UsuarioEntity entity) {
-
+        usuarioRepository.save(entity);
     }
 }

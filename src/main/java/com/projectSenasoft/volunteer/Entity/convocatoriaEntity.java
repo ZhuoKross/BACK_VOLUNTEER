@@ -7,7 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
+
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -28,10 +29,10 @@ public class convocatoriaEntity {
     private String nombreConvocatoria;
 
     @Column(name = "fecha_inicio")
-    private Date fechaInicio;
+    private LocalDate fechaInicio;
 
     @Column(name = "fecha_final")
-    private Date fechaFinal;
+    private LocalDate fechaFinal;
 
     private String requisitos;
 

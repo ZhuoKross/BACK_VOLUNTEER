@@ -1,6 +1,7 @@
 package com.projectSenasoft.volunteer.Services;
 
 import com.projectSenasoft.volunteer.Entity.RolEntity;
+import com.projectSenasoft.volunteer.Entity.UsuarioEntity;
 import com.projectSenasoft.volunteer.Repository.RolRepository;
 import com.projectSenasoft.volunteer.Services.Dao.Idao;
 import org.springframework.beans.factory.annotation.Autowired;

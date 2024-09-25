@@ -31,9 +31,9 @@ public class UsuarioEntity {
 
 
     @ManyToOne(targetEntity = RolEntity.class)
-    private String rol;
+    private RolEntity rol;
 
     @ManyToOne(targetEntity = PaisEntity.class)
-    private String pais;
+    private PaisEntity pais;
 
 }
