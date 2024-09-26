@@ -9,7 +9,10 @@ import lombok.Setter;
 
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 @Entity
@@ -36,7 +39,11 @@ public class convocatoriaEntity {
 
     private String requisitos;
 
+
+
     @ManyToMany(targetEntity = CategoriaEntity.class, fetch =  FetchType.LAZY)
-    @JoinTable(name = "convocatoria_categoria", joinColumns = @JoinColumn(name = "id_convocatoria"), inverseJoinColumns = @JoinColumn(name = "id_categoria"))
-    private List<CategoriaEntity> categoria;
+    @JoinTable(name = "convocatoria_categoria",
+            joinColumns = @JoinColumn(name = "id_convocatoria"),
+            inverseJoinColumns = @JoinColumn(name = "id_categoria"))
+    private List<CategoriaEntity> categorias = new ArrayList<>();
 }

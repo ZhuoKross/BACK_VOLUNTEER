@@ -40,8 +40,6 @@ public class ConvocatoriaService  implements Idao<convocatoriaEntity, String> {
         List<CategoriaEntity> categoriaEntities = convocatoriaRepository.findAssociatedCategory(idConvocatoria);
 
 
-
-
         System.out.println("(Service Las categorias son)" +categoriaEntities);
 
         return categoriaEntities;
@@ -69,6 +67,11 @@ public class ConvocatoriaService  implements Idao<convocatoriaEntity, String> {
     public void deleteOne(String idConvocatoria){
         convocatoriaRepository.deleteById(idConvocatoria);
     }
+
+    /*//MÉTODO PARA ELIMINAR UNA CATEGORIA DEL CONVOCATORY
+    public void deleteCategory(String idConvocatoria){
+
+    }*/
 
     @Override
     public void create(convocatoriaEntity entity) {

@@ -2,6 +2,7 @@ package com.projectSenasoft.volunteer.Controllers;
 
 import com.projectSenasoft.volunteer.Business.UsuarioBusiness;
 import com.projectSenasoft.volunteer.DTO.AssociateConvocatoriaDTO;
+import com.projectSenasoft.volunteer.DTO.AssociateUserConvocatoriaDTO;
 import com.projectSenasoft.volunteer.DTO.UsuarioDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -30,8 +31,8 @@ public class UsuarioController {
 
     //ENDPOINT PARA ASOCIAR CONVOCATORIAS CON USERS
     @PostMapping("/associate")
-    public void AssociateConvocatoria(@RequestBody AssociateConvocatoriaDTO associateConvocatoriaDTO){
-        usuarioBusiness.AssociateConvocatoria(associateConvocatoriaDTO);
+    public void AssociateConvocatoria(@RequestBody AssociateUserConvocatoriaDTO associateUserConvocatoriaDTO){
+        usuarioBusiness.AssociateConvocatoria(associateUserConvocatoriaDTO);
     }
 
 

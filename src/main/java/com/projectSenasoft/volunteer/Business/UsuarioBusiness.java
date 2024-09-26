@@ -1,6 +1,7 @@
 package com.projectSenasoft.volunteer.Business;
 
 import com.projectSenasoft.volunteer.DTO.AssociateConvocatoriaDTO;
+import com.projectSenasoft.volunteer.DTO.AssociateUserConvocatoriaDTO;
 import com.projectSenasoft.volunteer.DTO.UsuarioDTO;
 import com.projectSenasoft.volunteer.Entity.PaisEntity;
 import com.projectSenasoft.volunteer.Entity.RolEntity;
@@ -75,11 +76,11 @@ public class UsuarioBusiness {
     }
 
 
-    public void AssociateConvocatoria(AssociateConvocatoriaDTO associateConvocatoriaDTO){
+    public void AssociateConvocatoria(AssociateUserConvocatoriaDTO associateUserConvocatoriaDTO){
         try {
 
-            UsuarioEntity usuario= usuarioService.getById(associateConvocatoriaDTO.getIdUsuario());
-            convocatoriaEntity convocatoria = convocatoriaService.getById(associateConvocatoriaDTO.getIdConvocatoria());
+            UsuarioEntity usuario= usuarioService.getById(associateUserConvocatoriaDTO.getIdUsuario());
+            convocatoriaEntity convocatoria = convocatoriaService.getById(associateUserConvocatoriaDTO.getIdConvocatoria());
 
             usuario.getIdRegistroConvocatoria().add(convocatoria);
 

@@ -1,6 +1,7 @@
 package com.projectSenasoft.volunteer.Controllers;
 
 import com.projectSenasoft.volunteer.Business.ConvocatoriaBusiness;
+import com.projectSenasoft.volunteer.DTO.AssociateConvocatoriaDTO;
 import com.projectSenasoft.volunteer.DTO.CategoriaDTO;
 import com.projectSenasoft.volunteer.DTO.ConvocatoriaDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +28,10 @@ public class ConvocatoriaController {
         return convocatoriaDTOList;
     }
 
-    @GetMapping("/fetchcategorys/{id}")
+    @GetMapping("/viewCategorys/{id}")
     public List<CategoriaDTO> fetchCategorys(@PathVariable("id") String idConvocatoria){
 
-
+        System.out.println("El id de la convocatoria: " + idConvocatoria);
         List<CategoriaDTO> categoriaDTOS = convocatoriaBusiness.findAssoicatedCategory(idConvocatoria);
 
         System.out.println("objeto controller: " + categoriaDTOS);
@@ -44,6 +45,11 @@ public class ConvocatoriaController {
         convocatoriaBusiness.create(convocatoriaDTO);
     }
 
+    @PostMapping("/addCategory")
+    public void addCategory (@RequestBody AssociateConvocatoriaDTO associateConvocatoriaDTO){
+        convocatoriaBusiness.addCategory(associateConvocatoriaDTO);
+    }
+
     @PutMapping("/update/{id}")
     public void update(@PathVariable("id") String idConvocatoria, @RequestBody ConvocatoriaDTO convocatoriaDTO){
         convocatoriaBusiness.update(idConvocatoria, convocatoriaDTO);
@@ -54,4 +60,9 @@ public class ConvocatoriaController {
     public void delete(@PathVariable("id") String idConvocatoria){
         convocatoriaBusiness.delete(idConvocatoria);
     }
+
+    /*@DeleteMapping("/deleteCategory")
+    public void deleteCategory(@RequestBody AssociateConvocatoriaDTO associateConvocatoriaDTO){*/
+
+
 }

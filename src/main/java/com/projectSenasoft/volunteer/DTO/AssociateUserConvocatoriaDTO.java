@@ -1,16 +1,15 @@
 package com.projectSenasoft.volunteer.DTO;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class AssociateConvocatoriaDTO {
+@NoArgsConstructor
+public class AssociateUserConvocatoriaDTO {
 
+    private String idUsuario;
     private String idConvocatoria;
-    private String idCategoria;
 
 }
