@@ -5,7 +5,7 @@ server:
 
 spring:
   application:
-    name: stemProyect
+    name: Volunteer
 
   datasource:
     url: jdbc:postgresql://localhost:5500/Volunteer
@@ -24,3 +24,4 @@ spring:
 
   main:
     allow-circular-references: true
+
